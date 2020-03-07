@@ -10,19 +10,14 @@ import Questionnaire from './questionnaire/Questionnaire.js';
 import Results from './results/Results.js';
 
 export default function App() {
-  const [questionnaire, setQuestionnaire] = useState({});
 
   return (
     <>
       <Router>
         <Header />
         <Switch>
-          <Route exact path='/' render={() => {
-            return (
-              <Home setQuestionnaire={setQuestionnaire} />
-            )
-          }} />
-          <Route path='/questionnaire' component={Questionnaire} />
+          <Route exact path='/' component={Home} />
+          <Route path='/questionnaire/:area' component={Questionnaire} />
           <Route path='/results' component={Results} />
         </Switch>
       </Router>
