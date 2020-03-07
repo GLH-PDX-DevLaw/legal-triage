@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
+import LawAreaButton from '../lawAreaButton/LawAreaButton';
 
 
 const Home = ({ setQuestionnaire }) => {
@@ -46,10 +47,10 @@ const Home = ({ setQuestionnaire }) => {
           </form>
         </Modal>
         <p>hola mundo</p>
-      {/* <Button setQuestionnaire={setQuestionnaire}/>
-      <Button setQuestionnaire={setQuestionnaire}/>
-      <Button setQuestionnaire={setQuestionnaire}/>
-      <Button setQuestionnaire={setQuestionnaire}/> */}
+      {/* <LawAreaButton setQuestionnaire={setQuestionnaire}/>
+      <LawAreaButton setQuestionnaire={setQuestionnaire}/>
+      <LawAreaButton setQuestionnaire={setQuestionnaire}/>
+      <LawAreaButton setQuestionnaire={setQuestionnaire}/> */}
     </>
   )
 }
