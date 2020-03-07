@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './LawAreaButton.css';
 import useLawArea from '../../hooks/useLawArea';
 import { useHistory } from 'react-router-dom';
 
@@ -14,10 +15,15 @@ const LawAreaButton = ({ area }) => {
 
   return (
     <>
-      <button onClick={handleSetQuestionnaire}>
-        <img src={area.icon} /> 
-        <p>{area.label}</p>
-      </button>
+      <div className={styles.lawButtonContainer}>
+        <button
+          className={styles.mainLawButton}
+          onClick={handleSetQuestionnaire}
+        >
+          <img src={area.icon} className={styles.lawImage} />
+          <p className={styles.lawArea}>{area.label}</p>
+        </button>
+      </div>
     </>
   );
 };
