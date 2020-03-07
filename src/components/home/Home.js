@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import LawAreaButton from '../lawAreaButton/LawAreaButton';
+import { lawAreas } from '../../data/lawAreas';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -17,12 +18,6 @@ const Home = () => {
  
   const closeModal = () => {
     setIsOpen(false);
-  };
-
-  const area = {
-    label: 'domestic v',
-    icon: 'hi',
-    areaParam: 'dev'
   };
   
   
@@ -48,10 +43,10 @@ const Home = () => {
         </form>
       </Modal>
       <p>hola mundo</p>
-      <LawAreaButton area={area}/>
-      <LawAreaButton area={area}/>
-      <LawAreaButton area={area}/>
-      <LawAreaButton area={area}/>
+      <LawAreaButton area={lawAreas[0]}/>
+      <LawAreaButton area={lawAreas[0]}/>
+      <LawAreaButton area={lawAreas[0]}/>
+      <LawAreaButton area={lawAreas[0]}/>
     </>
   );
 };
