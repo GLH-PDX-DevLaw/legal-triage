@@ -9,11 +9,11 @@ const Home = () => {
     <>
 
     </>
-  )
-}
+  );
+};
 
 Home.propTypes = {
 
-}
+};
 
-export default home;
+export default Home;
