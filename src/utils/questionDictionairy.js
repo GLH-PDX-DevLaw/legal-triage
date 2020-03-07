@@ -1,7 +1,11 @@
-//Context will be an array of arrays. Each index in the parent array represents the contextual information for a question. The contextual information will be in the child array. This allows contextual information to have display information saved within it, such as calling it a paragraph or list element.
+//Each question has a field for flagging follow up questions,
+//A field for the question,
+//a field for the answers,
+//a field for how the answers should be displayed (dropdown, checkbox, etc),
+//a field for any contextual information for a question
 
+//Context will be an array of arrays. Each index in the parent array represents the contextual information for an answer at the same index in the answer array. The contextual information will be in the child array. This allows contextual information to have display information saved within it, such as calling it a paragraph or list item element.
 //If only one out of a few answers to a question has contextual information, the other answers will have a null value in the associated context array.
-
 
 //EX:
 // an * denotes having contextual information for that answer
@@ -22,6 +26,7 @@ const q1 = {
 const q2 = {
   hasFollowUp: false,
   question: 'What is the level of danger you are in?',
+  answer: 
   answers: [
     'This is an emergency. I am at risk of immediate physical danger.',
     'I am not at risk of immediate physical danger, but I am worried about my safety or the safety of those I care for in the near future.',
