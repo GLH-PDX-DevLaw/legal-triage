@@ -1,0 +1,22 @@
+
+$main: #388087;
+$main2: #6FB3B8;
+$green: rgb(179, 243, 197);
+$gray: #363538;
+$shadow: hsla(0, 9%, 2%, 0.329);
+$white: #F6F6F2;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: $white;
+    color: $gray;
+    font-family: 'Roboto', sans-serif;
+}
