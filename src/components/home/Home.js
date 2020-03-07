@@ -7,15 +7,15 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   Modal.setAppElement('#root');
-  const openModal = () => {
-    setIsOpen(true);
-  };
- 
+  // const openModal = () => {
+  //   setIsOpen(true);
+  // };
+
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
     // subtitle.style.color = '#f00';
   }
- 
+
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -42,11 +42,12 @@ const Home = () => {
           <button>the modal</button>
         </form>
       </Modal>
-      <p>hola mundo</p>
+
+      <p>Select an area of Law</p>
       <LawAreaButton area={lawAreas[0]}/>
-      <LawAreaButton area={lawAreas[0]}/>
-      <LawAreaButton area={lawAreas[0]}/>
-      <LawAreaButton area={lawAreas[0]}/>
+      <LawAreaButton area={lawAreas[1]}/>
+      <LawAreaButton area={lawAreas[2]}/>
+      <LawAreaButton area={lawAreas[3]}/>
     </>
   );
 };
