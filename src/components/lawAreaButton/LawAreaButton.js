@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useLawArea from '../../hooks/useLawArea';
 import { useHistory } from 'react-router-dom';
+import { useSetQuestionnaire } from '../../hooks/context';
+
 
 const LawAreaButton = ({ area }) => {
   const history = useHistory();
-  const { setQuestionnaire } = useLawArea();
-
-  const handleSetQuestionnaire = ({ target }) => {
-    setQuestionnaire(target.value);
-    history.push(`/questionnaire/${area.areaParam}`);
-  };
-
+  const { setQuestionnaire } = useSetQuestionnaire()
   return (
     <>
-      <button onClick={handleSetQuestionnaire}>
+      <button onClick={() => {
+        setQuestionnaire(area.label)
+        history.push(`/questionnaire/${area.areaParam}`);
+      }}>
         <img src={area.icon} /> 
         <p>{area.label}</p>
       </button>
