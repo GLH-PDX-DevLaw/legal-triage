@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import LawAreaButton from '../lawAreaButton/LawAreaButton';
 import { lawAreas } from '../../data/lawAreas';
+import useModal from '../../hooks/useModal';
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, setIsOpen } = useModal();
 
   Modal.setAppElement('#root');
   // const openModal = () => {
