@@ -1,17 +1,20 @@
 import React from 'react';
 import Question from '../question/Question';
+import ChangeQuestion from '../changeQuestion/ChangeQuestion';
 import { useQuestionnaire } from '../../hooks/context';
 
 export default function Questionnaire() {
-  const { questionnaire } = useQuestionnaire();
+  const { questionnaire, handleChangeQuestion } = useQuestionnaire();
   console.log(questionnaire.areaParam);
 
-  const handlePrevious = () => {
-    return;
-  };
-  const handleNext = () => {
-    return;
-  };
+ 
+
+  // const handlePrevious = () => {
+  //   return;
+  // };
+  // const handleNext = () => {
+  //   return;
+  // };
   let questionToRender = <Question />;
   return (
     <>
@@ -20,8 +23,9 @@ export default function Questionnaire() {
         <h2>This is where the questions will be rendered</h2>
         {questionToRender}
       </div>
-      <button onClick={handlePrevious}>Previous Question</button>
-      <button onClick={handleNext}>Next Question</button>
+      <ChangeQuestion handleChangeQuestion={handleChangeQuestion} />
+      {/* <button onClick={handlePrevious}>Previous Question</button>
+      <button onClick={handleNext}>Next Question</button> */}
     </>
   );
 }
