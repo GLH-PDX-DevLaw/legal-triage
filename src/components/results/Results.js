@@ -127,7 +127,7 @@ const nextSteps = (
 
 export default function Results() {
   //replace dummyAnswers with hook or props
-  const answers = ''//dummyAnswers;
+  const answers = ''; //dummyAnswers;
   
   if(!answers) {
     return (
