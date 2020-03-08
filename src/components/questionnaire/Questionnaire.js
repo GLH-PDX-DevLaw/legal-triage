@@ -3,8 +3,8 @@ import Question from '../question/Question';
 import { useQuestionnaire } from '../../hooks/context';
 
 export default function Questionnaire() {
-  const { questionnaire } = useQuestionnaire()
-  console.log(questionnaire.areaParam)
+  const { questionnaire } = useQuestionnaire();
+  console.log(questionnaire.areaParam);
 
   const handlePrevious = () => {
     return;
@@ -20,8 +20,8 @@ export default function Questionnaire() {
         <h2>This is where the questions will be rendered</h2>
         {questionToRender}
       </div>
-      <button onClick={handlePrevious} >Previous Question</button>
-      <button onClick={handleNext} >Next Question</button>
+      <button onClick={handlePrevious}>Previous Question</button>
+      <button onClick={handleNext}>Next Question</button>
     </>
   );
 }

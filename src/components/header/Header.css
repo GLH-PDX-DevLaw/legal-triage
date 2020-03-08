@@ -1,6 +1,7 @@
 @import '../App.css';
-.heroLogo {
-    width: 100%;
+
+.logo {
     height: 30vh;
-    background: $green;
+    width: 100%;
+    
 }
