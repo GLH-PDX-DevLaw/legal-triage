@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useUpdateAnswers, useAnswers } from '../../hooks/context';
 import styles from './Question.css';
 
 export default function Question({ questionToUse, setHasAnswered }) {
-  const handleChange = ({ target }) => {
+  const { updateAnswers } = useUpdateAnswers();
+  const { answers } = useAnswers();
+  // console.log(answers, 'right after destructuring');
+
+
+  const handleOptionOrRadioSelection = ({ target }) => {
     setHasAnswered(true);
+    updateAnswers({ ...answers, [questionToUse.name]: target.value });
+  };
+  
+  const handleCheckboxSelections = ({ target }) => {
+    //TO DO: handle unchecking and updating state
+    //TO DO: handle logic for if user has unchecked all boxes --> button should disable? only if user NEEDS to answer the question
+    setHasAnswered(true);
+    updateAnswers(oldAnswers => ({ ...oldAnswers, [questionToUse.name]: [...(oldAnswers[questionToUse.name] || []), target.value] }));
   };
 
+  //for dropdown
   const optionsElements = questionToUse.answers.map((answer, i) => {
     return (
       <option key={answer + i} value={answer}>
@@ -17,20 +32,19 @@ export default function Question({ questionToUse, setHasAnswered }) {
 
   const radioElements = questionToUse.answers.map((answer, i) => {
     return (
-      <>
-        <div className={styles.radioDiv}>
-          <input
-            type='radio'
-            id={answer}
-            name='letMakeSureThisActuallyWorksTomorrow'
-            key={answer + i}
-            value={answer}
-          />
-          <label className={styles.label} htmlFor={answer}>
-            {answer}
-          </label>
-        </div>
-      </>
+      <div className={styles.radioDiv}>
+        <input
+          type='radio'
+          id={answer}
+          name='letMakeSureThisActuallyWorksTomorrow'
+          key={answer + i}
+          value={answer}
+          onChange={handleOptionOrRadioSelection}
+        />
+        <label className={styles.label} htmlFor={answer}>
+          {answer}
+        </label>
+      </div>
     );
   });
 
@@ -44,6 +58,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
             name='letMakeSureThisActuallyWorksTomorrow'
             key={answer + i}
             value={answer}
+            onChange={handleCheckboxSelections}
           />
           <label className={styles.label2} htmlFor={answer}>{answer}</label>
         </div>
@@ -56,7 +71,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
   if (questionToUse.answerDisplay === 'select') {
     makeElement = (
       <div className={styles.selectDiv}>
-        <select onChange={handleChange} className={styles.select}>
+        <select onChange={handleChange} className={styles.select} onChange={handleOptionOrRadioSelection} >
           {optionsElements}
         </select>
       </div>

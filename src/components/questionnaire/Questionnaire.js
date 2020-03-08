@@ -7,14 +7,8 @@ import useQuestions from '../../hooks/useQuestions';
 import ChangeQuestion from '../changeQuestion/ChangeQuestion';
 
 export default function Questionnaire() {
-  const {
-    questionnaire,
-    currentQuestionIndex,
-    questionToUse,
-    hasAnswered,
-    setHasAnswered,
-    handleChangeQuestion
-  } = useQuestions();
+
+  const { questionnaire, currentQuestionIndex, questionToUse, hasAnswered, setHasAnswered, handleChangeQuestion } = useQuestions();
 
   return (
     <>
@@ -25,6 +19,7 @@ export default function Questionnaire() {
           Question {currentQuestionIndex + 1}
         </h2>
       </div>
+    
       <section className={styles.main}>
         <div className={styles.questions}>
           <Question
