@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const dummyAnswers = {
   q1: 'OR',
@@ -119,6 +120,7 @@ export default function Results() {
     <>
       <h1>This is the result page</h1>
       {toDisplay}
+      <Link to='/'><button>Return Home</button></Link>
     </>
   );
 }
