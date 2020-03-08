@@ -1,2 +1,51 @@
 @import '../App.css';
 
+.div {
+    text-align: center;
+   background-color: $yellow2;
+   height: 90vh;
+}
+h2 {
+    text-align: center;
+}
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    background: $main;
+    font-size: 1.7rem;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: .5rem;
+    box-shadow: 1px 1px 5px 1px $shadow;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background: transparent;
+      color: $yellow;
+    }
+  }
+  a {
+      color: $main;
+      font-size: 1.3rem;
+  }
+  li {
+      margin-top: .3rem;
+      text-decoration: none;
+      font-size: 1rem;
+      color: inherit;
+  }
+  .bono {
+      font-size: 1.8rem;
+      color: $main;
+  }
+  h4, h3 {
+      font-size: 1.4rem;
+  }

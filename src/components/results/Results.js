@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Results.css';
 import { Link } from 'react-router-dom';
 
 const dummyAnswers = {
@@ -16,119 +17,103 @@ const dummyAnswers = {
 };
 
 const otherResources = (
-  <div className={styles.main}>
-    <section key='resources'>
-      <h3 key='resourceP'>
-        Here is a list of other resources you may find useful:
-      </h3>
+  <section key='resources'>
+    <h3 key='resourceP'>
+      Here is a list of other resources you may find useful:
+    </h3>
+    <h4>Information about getting legal aid</h4>
+    <ul>
+      <li>
+        <a href='https://lasoregon.org/'>Legal Aid Services of Oregon</a>
+      </li>
+    </ul>
+    <h4>If you are in need of medical services</h4>
+    <ul>
+      <li>
+        <a href='https://www.oregon.gov/oha/HSD/AMH/Pages/Addictions.aspx'>
+          Oregon Health Authority
+        </a>
+      </li>
+    </ul>
 
-      <br />
+    <h4>If you are in need of counseling</h4>
+    <ul>
+      <li>
+        <a href='https://www.oregon.gov/oha/HSD/AMH/Pages/Addictions.aspx'>
+          National Domestic Violence Hotline
+        </a>
+      </li>
+    </ul>
 
-      <h4>Information about getting legal aid</h4>
-      <ul>
-        <li>
-          <a href='https://lasoregon.org/'>Legal Aid Services of Oregon</a>
-        </li>
-      </ul>
+    <h4>If you are in need of safety or sheltering services</h4>
+    <ul key='resourceList'>
+      <li key='services'>
+        <a href='https://www.oregon.gov/dhs/abuse/domestic/pages/index.aspx'>
+          Oregon Domestic Violence Victim Services
+        </a>
+      </li>
+      <li key='against'>
+        <a href='https://www.ocadsv.org/find-help'>
+          Oregon Coalition Against Domestic Violence
+        </a>
+      </li>
+      <li>
+        <a href='https://victimsofcrime.org/'>Stalking Resource Center</a>
+      </li>
+    </ul>
 
-      <br />
+    <h4>Additional Domestic Violence Resources</h4>
+    <ul>
+      <li key='call'>
+        <a href='https://calltosafety.org/'>Call to Safety</a>
+      </li>
+      <li key='battered'>
+        <a href='https://peaceathome.com/'>Battered Persons Advocacy</a>
+      </li>
+    </ul>
+  </section>
+);
 
-      <h4>If you are in need of medical services</h4>
-      <ul>
-        <li>
-          <a href='https://www.oregon.gov/oha/HSD/AMH/Pages/Addictions.aspx'>
-            Oregon Health Authority
-          </a>
-        </li>
-      </ul>
+const selfRepresentation = (
+  <section>
+    <h3>If you would like to represent yourself: </h3>
 
-      <br />
+    <h4>What does the legal process look like?</h4>
+    <ul>
+      <li>
+        <a href='https://aldf.org/article/the-legal-process-in-the-united-states-a-criminal-case/'>
+          The criminal process
+        </a>
+      </li>
+      <li>
+        <a href='https://aldf.org/article/the-legal-process-in-the-united-states-a-civil-case/'>
+          The civil process
+        </a>
+      </li>
+    </ul>
 
-      <h4>If you are in need of counseling</h4>
-      <ul>
-        <li>
-          <a href='https://www.oregon.gov/oha/HSD/AMH/Pages/Addictions.aspx'>
-            National Domestic Violence Hotline
-          </a>
-        </li>
-      </ul>
+    <br />
 
-      <br />
-
-      <h4>If you are in need of safety or sheltering services</h4>
-      <ul key='resourceList'>
-        <li key='services'>
-          <a href='https://www.oregon.gov/dhs/abuse/domestic/pages/index.aspx'>
-            Oregon Domestic Violence Victim Services
-          </a>
-        </li>
-        <li key='against'>
-          <a href='https://www.ocadsv.org/find-help'>
-            Oregon Coalition Against Domestic Violence
-          </a>
-        </li>
-        <li>
-          <a href='https://victimsofcrime.org/'>Stalking Resource Center</a>
-        </li>
-      </ul>
-
-      <br />
-
-      <h4>Additional Domestic Violence Resources</h4>
-      <ul>
-        <li key='call'>
-          <a href='https://calltosafety.org/'>Call to Safety</a>
-        </li>
-        <li key='battered'>
-          <a href='https://peaceathome.com/'>Battered Persons Advocacy</a>
-        </li>
-      </ul>
-
-      <br />
-    </section>
-    ); const selfRepresentation = (
-    <section>
-      <h3>If you would like to represent yourself: </h3>
-
-      <br />
-
-      <h4>What does the legal process look like?</h4>
-      <ul>
-        <li>
-          <a href='https://aldf.org/article/the-legal-process-in-the-united-states-a-criminal-case/'>
-            The criminal process
-          </a>
-        </li>
-        <li>
-          <a href='https://aldf.org/article/the-legal-process-in-the-united-states-a-civil-case/'>
-            The civil process
-          </a>
-        </li>
-      </ul>
-
-      <br />
-
-      <h4>I want to represent myself</h4>
-      <ul>
-        <li>
-          <a href='https://www.doj.state.or.us/crime-victims/victims-resources/other-resources/county-victim-assistance-programs/'>
-            Victim&apos;s assitance programs
-          </a>
-        </li>
-        <li>
-          <a href='https://www.law.cornell.edu/wex/pro_se'>
-            Information on Pro Se
-          </a>
-        </li>
-        <li>
-          <a href='https://www.rocketlawyer.com/article/what-is-pro-se-legal-representation.rl'>
-            More information on Pro Se representation
-          </a>
-        </li>
-      </ul>
-      <br />
-    </section>
-  </div>
+    <h4>I want to represent myself</h4>
+    <ul>
+      <li>
+        <a href='https://www.doj.state.or.us/crime-victims/victims-resources/other-resources/county-victim-assistance-programs/'>
+          Victim&apos;s assistance programs
+        </a>
+      </li>
+      <li>
+        <a href='https://www.law.cornell.edu/wex/pro_se'>
+          Information on Pro Se
+        </a>
+      </li>
+      <li>
+        <a href='https://www.rocketlawyer.com/article/what-is-pro-se-legal-representation.rl'>
+          More information on Pro Se representation
+        </a>
+      </li>
+    </ul>
+    <br />
+  </section>
 );
 
 const getLikelihood = score => {
@@ -200,8 +185,7 @@ const nextSteps = (
       called Pro Bono representation.
     </p>
     <Link to={'/probono'}>Find a Pro Bono lawyer</Link>
-    <br />
-    <br />
+
     <p>
       If you can afford a lawyer, we can make some recommendations for you. You
       will be able to select a lawyer, and we will pass on the information you
@@ -228,29 +212,29 @@ export default function Results() {
     );
   }
 
-  // toDisplay.push(
-  //   <p key='score'>
-  //     Your score is {score}
-  //   </p>
-  // );
-
   return (
     <>
-      <h2>Summary</h2>
-      <div>{toDisplay}</div>
-      <br />
-      <div>
-        <p key='likelihood'>
-          It is <b>{getLikelihood(score)} </b>that you have a claim.
-        </p>
+      <div className={styles.div}>
+        <h2>Summary</h2>
+        <div>{toDisplay}</div>
+        {/* <div>
+          <p key='likelihood'>
+            It is <em> &nbsp;{getLikelihood(score)} &nbsp; </em> that you have a
+            claim.
+          </p>
+        </div>
+        <br />
+        <div>{nextSteps}</div> */}
+        <div>{otherResources}</div>
+        <div>{selfRepresentation}</div>
+        <Link to={'/probono'} className={styles.bono}>Find a Pro Bono lawyer</Link>
+
+        <div className={styles.btnContainer}>
+          <Link to='/'>
+            <button className={styles.btn}>Return Home</button>
+          </Link>
+        </div>
       </div>
-      <br />
-      <div>{nextSteps}</div>
-      <div>{otherResources}</div>
-      <div>{selfRepresentation}</div>
-      <Link to='/'>
-        <button>Return Home</button>
-      </Link>
     </>
   );
 }
