@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useUpdateAnswers } from '../../hooks/context';
+import { useUpdateAnswers, useAnswers } from '../../hooks/context';
 
 export default function Question({ questionToUse, setHasAnswered }) {
-  const { updateAnswers, answers } = useUpdateAnswers();
+  const { updateAnswers } = useUpdateAnswers();
+  const { answers } = useAnswers();
+  console.log(answers, 'right after destructuring');
 
   const questionName = questionToUse.name; 
 
@@ -44,7 +46,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
     makeElement = (
       <select onChange={({ target }) => {
         setHasAnswered(true);
-        updateAnswers({ [questionName]: target.value });
+        updateAnswers({ ...answers, [questionToUse.name]: target.value });
         console.log({ answers });
       }}>
         {optionsElements}
