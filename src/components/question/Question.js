@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Question({ questionToUse, hasAnswered, setHasAnswered }) {
+export default function Question({ questionToUse, setHasAnswered }) {
 
   const handleChange = ({ target }) => {
     setHasAnswered(true);
@@ -15,26 +15,40 @@ export default function Question({ questionToUse, hasAnswered, setHasAnswered })
     );
   });
 
-  const makeElement = () => {
-    if(questionToUse.answerDisplay === 'select') {
-      return (
-        <select onChange={handleChange}>
-          {optionsElements}
-        </select>
-      );
-    }
-  };
+  const radioElements = questionToUse.answers.map(answer => {
+    return (
+      <>
+        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer} value={answer} />
+        <label htmlFor={answer}>{answer}</label>
+      </>
+    );
+  });
+
+  let makeElement = '';
+
+  if(questionToUse.answerDisplay === 'select') {
+    makeElement = (
+      <select onChange={handleChange}>
+        {optionsElements}
+      </select>
+    );
+  } else if(questionToUse.answerDisplay === 'radio') {
+    makeElement = (
+      <>
+        {radioElements}
+      </>
+    );
+  }
 
   return (
     <>
       <p>{questionToUse.question}</p>
-      {makeElement()}
+      {makeElement}
     </>
   );
 }
 
 Question.propTypes = {
   questionToUse: PropTypes.object.isRequired, 
-  setHasAnswered: PropTypes.func.isRequired, 
-  hasAnswered: PropTypes.bool.isRequired
+  setHasAnswered: PropTypes.func.isRequired,
 };

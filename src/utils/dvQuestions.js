@@ -28,6 +28,7 @@ const q1 = {
 };
 
 const q2 = {
+  name: 'q2',
   hasFollowUp: false,
   question: 'What is the level of danger you are in?',
   answerDisplay: 'radio',
