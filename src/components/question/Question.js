@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Question.css';
 
 export default function Question({ questionToUse, setHasAnswered }) {
-
   const handleChange = ({ target }) => {
     setHasAnswered(true);
   };
@@ -18,8 +18,18 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const radioElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
-        <label htmlFor={answer}>{answer}</label>
+        <div className={styles.radioDiv}>
+          <input
+            type='radio'
+            id={answer}
+            name='letMakeSureThisActuallyWorksTomorrow'
+            key={answer + i}
+            value={answer}
+          />
+          <label className={styles.label} htmlFor={answer}>
+            {answer}
+          </label>
+        </div>
       </>
     );
   });
@@ -27,43 +37,45 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const checkboxElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
-        <label htmlFor={answer}>{answer}</label>
+        <div className={styles.checkboxDiv}>
+          <input
+            type='checkbox'
+            id={answer}
+            name='letMakeSureThisActuallyWorksTomorrow'
+            key={answer + i}
+            value={answer}
+          />
+          <label className={styles.label2} htmlFor={answer}>{answer}</label>
+        </div>
       </>
     );
   });
 
   let makeElement = null;
 
-  if(questionToUse.answerDisplay === 'select') {
+  if (questionToUse.answerDisplay === 'select') {
     makeElement = (
-      <select onChange={handleChange}>
-        {optionsElements}
-      </select>
+      <div className={styles.selectDiv}>
+        <select onChange={handleChange} className={styles.select}>
+          {optionsElements}
+        </select>
+      </div>
     );
-  } else if(questionToUse.answerDisplay === 'radio') {
-    makeElement = (
-      <>
-        {radioElements}
-      </>
-    );
-  } else if(questionToUse.answerDisplay === 'checkbox') {
-    makeElement = (
-      <>
-        {checkboxElements}
-      </>
-    );
+  } else if (questionToUse.answerDisplay === 'radio') {
+    makeElement = <>{radioElements}</>;
+  } else if (questionToUse.answerDisplay === 'checkbox') {
+    makeElement = <>{checkboxElements}</>;
   }
 
   return (
     <>
-      <p>{questionToUse.question}</p>
+      <p className={styles.questionText}>{questionToUse.question}</p>
       {makeElement}
     </>
   );
 }
 
 Question.propTypes = {
-  questionToUse: PropTypes.object.isRequired, 
-  setHasAnswered: PropTypes.func.isRequired,
+  questionToUse: PropTypes.object.isRequired,
+  setHasAnswered: PropTypes.func.isRequired
 };

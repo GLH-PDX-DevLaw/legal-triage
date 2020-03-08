@@ -1,0 +1,42 @@
+@import '../App.css';
+
+.heading {
+    text-align: center;
+    margin-left: 6.5rem;
+    margin-top: 1rem;
+    color: $gray;
+}
+
+.main {
+    display: grid;
+      place-items: center center;
+    
+    .questions {
+      color: $gray;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 2px solid $main;
+        height:45vh;
+        width: 90vw;
+        background: $yellow2;
+    }
+    .questionBtns {
+      width: auto;
+      margin: 1rem auto;
+
+    }
+}
+.icons {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $main;
+    img {
+        display: flex;
+    justify-content: flex-end;
+        border: 2px solid $main;
+        margin: .3rem;
+        height: 3.2rem;
+        width: 3.2rem;
+      
+    }
+}

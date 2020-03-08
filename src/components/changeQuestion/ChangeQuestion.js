@@ -4,18 +4,21 @@ import styles from './ChangeQuestion.css';
 const ChangeQuestion = ({ handleChangeQuestion, index }) => {
   return (
     <div className={styles.Buttons}>
-      <span className={styles.previousText}>Previous</span>
-      <button
-        value='previous'
-        onClick={({ target }) => handleChangeQuestion(target.value, index)}
-        className={styles.prev}
-      ></button>
-      <button
-        value='next'
-        onClick={({ target }) => handleChangeQuestion(target.value, index)}
-        className={styles.next}
-      ></button>
-      <span className={styles.nextText}>Next</span>
+      <div className={styles.prevDiv}>
+        <button
+          value='previous'
+          onClick={({ target }) => handleChangeQuestion(target.value, index)}
+          className={styles.prev}
+        ></button><span className={styles.previousText}>Previous</span>
+      </div>
+      <div className={styles.nextDiv}>
+        <span className={styles.nextText}>Next</span> <button
+          value='next'
+          onClick={({ target }) => handleChangeQuestion(target.value, index)}
+          className={styles.next}
+        ></button>
+       
+      </div>
     </div>
   );
 };
