@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useUpdateAnswers, useAnswers } from '../../hooks/context';
 
 export default function Question({ questionToUse, setHasAnswered }) {
-  const [checkboxAnswers, setCheckboxAnswers] = useState([]);
   const { updateAnswers } = useUpdateAnswers();
   const { answers } = useAnswers();
   console.log(answers, 'right after destructuring');
@@ -13,20 +12,13 @@ export default function Question({ questionToUse, setHasAnswered }) {
     setHasAnswered(true);
     updateAnswers({ ...answers, [questionToUse.name]: target.value });
   };
-
-  const updateCheckboxAnswers = value => {
-    //TO DO: make it so removes from array if deselect checkbox
-    console.log(value, 'value');
-    setCheckboxAnswers([...checkboxAnswers, value]);
-  };
   
   const handleCheckboxSelections = ({ target }) => {
     //TO DO: handle logic for if user has unchecked all boxes --> button should disable? only if user NEEDS to answer the question
     console.log(target, 'target');
 
     setHasAnswered(true);
-    updateCheckboxAnswers(target.value);
-    updateAnswers({ ...answers, [questionToUse.name]: checkboxAnswers });
+    updateAnswers(oldAnswers => ({ ...oldAnswers, [questionToUse.name]: [...(oldAnswers[questionToUse.name] || []), target.value] }));
     console.log(answers, 'end of handle checkboxes');
   };
 
