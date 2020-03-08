@@ -26,7 +26,7 @@ const otherResources = (
     <h4>Information about getting legal aid</h4>
     <ul>
       <li>
-        <a href=' https://lasoregon.org/'>Legal Aid Services of Oregon</a>
+        <a href='https://lasoregon.org/'>Legal Aid Services of Oregon</a>
       </li>
     </ul>
 
@@ -168,14 +168,16 @@ const nextSteps = (
     </p>
     <br />
     <p>
-      You may represent yourself in court. This is called Pro Se representation. If you do not qualify for legal aid, and you are unable to afford a lawyer, this is your best option. To get an idea of whether or not you qualify for aid, take a look at this resource. 
+      You may represent yourself in court. This is called Pro Se representation. If you do not qualify for legal aid, and you are unable to afford a lawyer, this is your best option. To get an idea of whether or not you qualify for aid, take a look at <a href='https://lasoregon.org/'>this</a> resource. 
       
       For information on representing yourself, please take a look at our resources.
     </p>
     <br />
     <p>
-      If you do not want to represent yourself, but are unable to afford a lawyer, you may qualify for legal aid based on your income. If you would like to, you can provide us with a little more personal information about yourself, and we will try to match you with a lawyer in your area. This is called Pro Bono representation.
+      If you do not want to represent yourself, but are unable to afford a lawyer, you may qualify for legal aid based on a few factors. If you would like to, you can provide us with a little more personal information about yourself, and we will try to match you with a lawyer in your area. This is called Pro Bono representation.
     </p>
+    <Link to={'/probono'}>Find a Pro Bono lawyer</Link>
+    <br />
     <br />
     <p>
       If you can afford a lawyer, we can make some recommendations for you. You will be able to select a lawyer, and we will pass on the information you provided to them. This should speed up the amount of time it takes a lawyer to become familiar with your case.
@@ -194,7 +196,7 @@ export default function Results() {
   if(answers.q2.includes('emergency')) {
     toDisplay.push(
       <p key='emergency'>
-        You indicated that you are in immediate danger. Call 911 as soon as possible. Get to a safe place until authorities arrive.
+        You indicated that you are in immediate danger. Call 911 as soon as possible. If possible, get to a safe place until authorities arrive.
       </p>
     );
   }
