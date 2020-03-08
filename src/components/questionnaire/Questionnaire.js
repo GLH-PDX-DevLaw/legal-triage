@@ -1,27 +1,23 @@
 import React from 'react';
 import Question from '../question/Question';
-import { useQuestionnaire } from '../../hooks/context';
+import useQuestions from '../../hooks/useQuestions';
+import ChangeQuestion from '../changeQuestion/ChangeQuestion';
 
 export default function Questionnaire() {
-  const { questionnaire } = useQuestionnaire();
-  console.log(questionnaire.areaParam);
+  const { questionnaire, currentQuestionIndex, handleNext, handlePrevious, questionToUse, hasAnswered, setHasAnswered, handleChangeQuestion } = useQuestions();
 
-  const handlePrevious = () => {
-    return;
-  };
-  const handleNext = () => {
-    return;
-  };
-  let questionToRender = <Question />;
   return (
     <>
-      <h1>{`This is the ${questionnaire.label} page`}</h1>
+      <h1>{`Legality surrounding ${questionnaire.label}`}</h1>
+      <p>{currentQuestionIndex + 1}</p>
       <div>
-        <h2>This is where the questions will be rendered</h2>
-        {questionToRender}
+        <Question setHasAnswered={setHasAnswered} questionToUse={questionToUse} /> 
       </div>
-      <button onClick={handlePrevious}>Previous Question</button>
-      <button onClick={handleNext}>Next Question</button>
+      {/* <button onClick={() => {handleNext(currentQuestionIndex)}} >Next Question</button>
+      <p>{currentQuestionIndex + 1}</p>
+      <button onClick={() => {handlePrevious(currentQuestionIndex)}} >Previous Question</button> */}
+
+      <ChangeQuestion index={currentQuestionIndex} handleChangeQuestion={handleChangeQuestion}/>
     </>
   );
 }
