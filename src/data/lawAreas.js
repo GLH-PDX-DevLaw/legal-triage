@@ -2,7 +2,7 @@ import dvImage from '../assets/dv.png';
 import houseImage from '../assets/house.png';
 import creditImage from '../assets/credit.png';
 import discrImage from '../assets/discrimination.png';
-import dvQuestions from '../utils/dvQuestions'
+import { dvQuestions } from '../utils/dvQuestions'
 
 export const lawAreas = [
   {
