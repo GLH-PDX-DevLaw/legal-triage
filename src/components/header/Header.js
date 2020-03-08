@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './Header.css';
+import logo from '../../assets/legalRouter.png';
+import Footer from '../footer/Footer';
 
 export default function Header() {
   return (
     <>
       <div className={styles.heroLogo}>
-        <h1>This is the header</h1>
+        <img className={styles.logo} src={logo} />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );

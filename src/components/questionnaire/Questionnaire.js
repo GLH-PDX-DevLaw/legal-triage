@@ -15,6 +15,7 @@ export default function Questionnaire() {
       <button onClick={handleNext} >Next Question</button>
       <p>{currentQuestionIndex + 1}</p>
       <button onClick={handlePrevious} >Previous Question</button>
+
     </>
   );
 }
