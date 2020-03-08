@@ -1,7 +1,7 @@
 import dvImage from '../assets/dv.png';
 import houseImage from '../assets/house.png';
 import creditImage from '../assets/credit.png';
-import discrImage from '../assets/discrimination.png';
+import discrImage from '../assets/equal.png';
 
 export const lawAreas = [
   {
@@ -15,7 +15,7 @@ export const lawAreas = [
     areaParam: 'housing'
   },
   {
-    label: 'Credit',
+    label: 'Credit / Debt',
     icon: creditImage,
     areaParam: 'credit'
   },

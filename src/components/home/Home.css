@@ -1,25 +1,78 @@
 @import '../../index.css';
-.lawAreaButtonContainer{
+
+.modalContainer {
+    background: $white;
+    color: $gray;
+    
+  h2 {
+      text-align: center;
+      padding-top: 2rem;
+      
+  }
+  
+  .lawAreaButton > p {
+    display: grid;
+    margin-bottom: 3rem;
+  }
+
+  .form {
+    display: grid;
+    place-items: center center;
+    padding: 2rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+}
+.modalBtnExit {
+    display: flex;
+    align-self: flex-start;
+    background: $red;
+    font-size: 2rem;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: .5rem;
+    box-shadow: 1px 1px 5px 1px $shadow;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background: transparent;
+      color: $red;
+    }
+  }
+  .lawAreaButtonContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
-   
- 
-}
-.selectLaw{
+  }
+.selectLaw {
     color: $main;
     font-size: 2rem;
     text-align: center;
+    text-transform: capitalize;
     margin: 1rem auto 3rem auto;
-    
-}
-.lawAreaButton > p{
-    display: grid;
-    margin-bottom: 3rem;
-    &:p {
-        margin-bottom: 2rem;
+  }
+  .sectionBtn {
+      display: flex;
+      justify-content: flex-end;
+      .modalBtn {
+           background: $main;
+    font-size: 2rem;
+    color: $white;
+    border: none;
+    margin: .5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 5px 1px $shadow;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover {
+      background: transparent;
+      color: $gray2;
     }
-}
-
-
+      }
+  }

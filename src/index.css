@@ -1,8 +1,11 @@
 
-$main: #388087;
-$main2: #6FB3B8;
-$green: rgb(179, 243, 197);
+$main: rgb(18,5,52);
+$yellow: rgb(233,212,19);
+$yellow2: rgba(233, 212, 19, 0.4);
+
+$red: rgb(139, 8, 36);
 $gray: #363538;
+$gray2: #79777c;
 $shadow: hsla(0, 9%, 2%, 0.329);
 $white: #F6F6F2;
 

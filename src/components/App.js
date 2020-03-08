@@ -22,6 +22,7 @@ export default function App() {
           <Route path='/questionnaire/:area' component={Questionnaire} />
           <Route path='/results' component={Results} />
         </Switch>
+        
       </Router>
     </>
   );

@@ -20,8 +20,7 @@ const Home = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
-  
-  
+
   return (
     <>
       <Modal
@@ -32,15 +31,31 @@ const Home = () => {
         contentLabel='Example Modal'
       >
         {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <section className={styles.sectionBtn}>
+          <button onClick={closeModal} className={styles.modalBtnExit}>
+            Exit
+          </button>
+
+          <button className={styles.modalBtn}>Continue</button>
+          <button className={styles.modalBtn}>Resource</button>
+        </section>
+        <div className={styles.modalContainer}>
+          <h2>Please Read</h2>
+          <form className={styles.form}>
+            <article className={styles.modalInfo}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
+              suscipit? Esse libero a similique veniam dolores velit, sunt
+              expedita, nobis facere dolor reiciendis dolore pariatur voluptates
+              nulla odit rerum consectetur id iusto ipsam tempore exercitationem
+              corporis minima voluptatum! Culpa, architecto. Lorem ipsum dolor
+              sit, amet consectetur adipisicing elit. Ducimus, suscipit? Esse
+              libero a similique veniam dolores velit, sunt expedita, nobis
+              facere dolor reiciendis dolore pariatur voluptates nulla odit
+              rerum consectetur id iusto ipsam tempore exercitationem corporis
+              minima voluptatum! Culpa, architecto.
+            </article>
+          </form>
+        </div>
       </Modal>
 
       <p className={styles.selectLaw}>Select an area of Law</p>
