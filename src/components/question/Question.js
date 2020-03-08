@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useUpdateAnswers, useAnswers } from '../../hooks/context';
 
 export default function Question({ questionToUse, setHasAnswered }) {
+  const [checkboxAnswers, setCheckboxAnswers] = useState([]);
   const { updateAnswers } = useUpdateAnswers();
   const { answers } = useAnswers();
   console.log(answers, 'right after destructuring');
@@ -11,6 +12,22 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const handleOptionOrRadioSelection = ({ target }) => {
     setHasAnswered(true);
     updateAnswers({ ...answers, [questionToUse.name]: target.value });
+  };
+
+  const updateCheckboxAnswers = value => {
+    //TO DO: make it so removes from array if deselect checkbox
+    console.log(value, 'value');
+    setCheckboxAnswers([...checkboxAnswers, value]);
+  };
+  
+  const handleCheckboxSelections = ({ target }) => {
+    //TO DO: handle logic for if user has unchecked all boxes --> button should disable? only if user NEEDS to answer the question
+    console.log(target, 'target');
+
+    setHasAnswered(true);
+    updateCheckboxAnswers(target.value);
+    updateAnswers({ ...answers, [questionToUse.name]: checkboxAnswers });
+    console.log(answers, 'end of handle checkboxes');
   };
 
   //for dropdown
@@ -34,7 +51,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const checkboxElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} onChange={handleOptionOrRadioSelection} />
+        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} onChange={handleCheckboxSelections} />
         <label htmlFor={answer}>{answer}</label>
       </>
     );
