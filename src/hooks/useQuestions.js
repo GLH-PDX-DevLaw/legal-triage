@@ -26,7 +26,7 @@ const useQuestions = () => {
     setQuestionToUse(questionsArray[currentQuestionIndex]);
   }, [currentQuestionIndex]);
 
-  return { currentQuestionIndex, questionToUse, setHasAnswered, hasAnswered, handleChangeQuestion };
+  return { currentQuestionIndex, questionToUse, setHasAnswered, hasAnswered, handleChangeQuestion, questionsArray };
 };
 
 export default useQuestions;

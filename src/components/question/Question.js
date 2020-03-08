@@ -8,7 +8,6 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const { answers } = useAnswers();
   console.log(answers, 'right after destructuring');
 
-
   const handleOptionOrRadioSelection = ({ target }) => {
     setHasAnswered(true);
     updateAnswers({ ...answers, [questionToUse.name]: target.value });
