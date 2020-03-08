@@ -45,16 +45,16 @@ const q2 = {
         type: 'p',
         text: 'Here is a list of other resources: '
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Oregon Domestic Violence Victim Services - https://www.oregon.gov/dhs/abuse/domestic/pages/index.aspx'
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Oregon Coalition Against Domestic Violence - https://www.ocadsv.org/find-help' 
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Call to Safety - https://calltosafety.org/'
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Battered Persons Advocacy - https://peaceathome.com/'
       }
     ],
@@ -90,7 +90,7 @@ const q3 = {
 
 const q4 = {
   hasFollowUp: true,
-  question: 'Are there children involved?',
+  question: 'Are there endagered children?',
   answerDisplay: 'radio',
   answers: ['Yes', 'No'],
   context: [null, null]
@@ -114,19 +114,6 @@ const q4F1 = {
 const q4F2 = {
   parentAnswer: 'q4A',
   hasFollowUp: false,
-  question: 'How many children are involved?',
-  answerDisplay: 'radio',
-  answers: [
-    'One',
-    'Two',
-    'Three or more'
-  ],
-  context: [null, null, null]
-};
-
-const q4F3 = {
-  parentAnswer: 'q4A',
-  hasFollowUp: false,
   question: 'What is the age range for the children involved?',
   answerDisplay: 'checkbox',
   answers: [
@@ -146,7 +133,8 @@ const q5 = {
   answers: [
     'Previous or current abuse',
     'Fear of imminent abuse',
-    'Unsure'
+    'Unsure',
+    'No abuse'
   ],
   //The information for answer 1 and 2 is the same, meant to be duplicate
   context: [
@@ -163,7 +151,9 @@ const q5 = {
     }, {
       type: 'p',
       text: 'Some specific types of abuse are physical abuse, emotional abuse, verbal abuse, and sexual abuse.'
-    }]
+    }],
+    null,
+    null
   ]
 };
 
@@ -245,9 +235,15 @@ const q5F2 = {
     'Within the last 30 days',
     'Within the last 90 days',
     'Within the last 6 months',
-    'Within the last year'
+    'Within the last year',
+    'Within the last 2 years',
+    'Within the last 3 years',
+    'Longer than 3 years'
   ],
   context: [
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -333,9 +329,11 @@ const q6 = {
     'Child custody',
     'Medical care',
     'Counseling',
-    'Restraining order'
+    'Restraining order',
+    'None'
   ],
   context: [
+    null,
     null,
     null,
     null,
@@ -345,14 +343,8 @@ const q6 = {
   ]
 };
 
-const q7 = {
-  hasFollowUp: false,
-  question: 'Any additional comments?',
-  answerDisplay: 'textArea',
-  answers: [''],
-  context: [null]
+export const dvQuestions = {
+  questionList: [q1, q2, q3, q4, q5, q6],
+  question4FollowUps: [q4F1, q4F2],
+  question5FollowUps: [q5F1, q5F2, q5F3]
 };
-
-export const questionList = [q1, q2, q3, q4, q5, q6, q7];
-export const question4FollowUps = [q4F1, q4F2, q4F3];
-export const question5FollowUps = [q5F1, q5F2, q5F3];

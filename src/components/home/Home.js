@@ -3,9 +3,10 @@ import Modal from 'react-modal';
 import styles from './Home.css';
 import LawAreaButton from '../lawAreaButton/LawAreaButton';
 import { lawAreas } from '../../data/lawAreas';
+import useModal from '../../hooks/useModal';
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, setIsOpen } = useModal();
 
   Modal.setAppElement('#root');
   // const openModal = () => {

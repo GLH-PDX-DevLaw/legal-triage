@@ -2,15 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Checkbox.css';
 
-const Checkbox = ({
-  
-  name,
-  label,
-  checked,
-  onChange,
-  value
-  
-}) => {
+const Checkbox = ({ name, label, checked, onChange, value }) => {
   return (
     <>
       <div className={styles.Checkbox}>
