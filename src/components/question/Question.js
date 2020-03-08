@@ -7,24 +7,33 @@ export default function Question({ questionToUse, setHasAnswered }) {
     setHasAnswered(true);
   };
 
-  const optionsElements = questionToUse.answers.map(answer => {
+  const optionsElements = questionToUse.answers.map((answer, i) => {
     return (
-      <option key={answer} value={answer}>
+      <option key={answer + i} value={answer}>
         {answer}
       </option>
     );
   });
 
-  const radioElements = questionToUse.answers.map(answer => {
+  const radioElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer} value={answer} />
+        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
         <label htmlFor={answer}>{answer}</label>
       </>
     );
   });
 
-  let makeElement = '';
+  const checkboxElements = questionToUse.answers.map((answer, i) => {
+    return (
+      <>
+        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
+        <label htmlFor={answer}>{answer}</label>
+      </>
+    );
+  });
+
+  let makeElement = null;
 
   if(questionToUse.answerDisplay === 'select') {
     makeElement = (
@@ -36,6 +45,12 @@ export default function Question({ questionToUse, setHasAnswered }) {
     makeElement = (
       <>
         {radioElements}
+      </>
+    );
+  } else if(questionToUse.answerDisplay === 'checkbox') {
+    makeElement = (
+      <>
+        {checkboxElements}
       </>
     );
   }

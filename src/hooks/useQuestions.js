@@ -13,7 +13,7 @@ const useQuestions = () => {
   
 
   const handleNext = currentIndex => {
-    //TO DO: only want to show next question if the current question has an answer selected
+    
     setCurrentQuestionIndex(currentIndex + 1);
   };
 
@@ -21,11 +21,21 @@ const useQuestions = () => {
     setCurrentQuestionIndex(currentIndex - 1);
   };
 
+  const handleChangeQuestion = (value, currentIndex) => {
+    if(value === 'next') {
+      //TO DO: only want to show next question if the current question has an answer selected
+      setCurrentQuestionIndex(currentIndex + 1);
+    }
+    if(value === 'previous' && currentIndex !== 1) {
+      setCurrentQuestionIndex(currentIndex - 1);
+    }
+  };
+
   useEffect(() => {
     setQuestionToUse(questionsArray[currentQuestionIndex]);
   }, [currentQuestionIndex]);
 
-  return { currentQuestionIndex, questionnaire, handleNext, handlePrevious, questionToUse, setHasAnswered, hasAnswered };
+  return { currentQuestionIndex, questionnaire, handleNext, handlePrevious, questionToUse, setHasAnswered, hasAnswered, handleChangeQuestion };
 };
 
 export default useQuestions;
