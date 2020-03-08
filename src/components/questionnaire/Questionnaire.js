@@ -12,8 +12,7 @@ import styles2 from '../home/Home.css';
 
 export default function Questionnaire() {
   const params = useParams();
-
-  const { questionnaire, currentQuestionIndex, questionToUse, hasAnswered, setHasAnswered, handleChangeQuestion } = useQuestions();
+  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion } = useQuestions();
 
   const { isOpen, setIsOpen } = useModal();
 
@@ -90,3 +89,4 @@ export default function Questionnaire() {
     </>
   );
 }
+
