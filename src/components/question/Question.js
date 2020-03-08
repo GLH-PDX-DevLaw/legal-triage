@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useUpdateAnswers, useAnswers } from '../../hooks/context';
 
 export default function Question({ questionToUse, setHasAnswered }) {
   const { updateAnswers } = useUpdateAnswers();
   const { answers } = useAnswers();
-  console.log(answers, 'right after destructuring');
+  // console.log(answers, 'right after destructuring');
 
 
   const handleOptionOrRadioSelection = ({ target }) => {
@@ -14,12 +14,10 @@ export default function Question({ questionToUse, setHasAnswered }) {
   };
   
   const handleCheckboxSelections = ({ target }) => {
+    //TO DO: handle unchecking and updating state
     //TO DO: handle logic for if user has unchecked all boxes --> button should disable? only if user NEEDS to answer the question
-    console.log(target, 'target');
-
     setHasAnswered(true);
     updateAnswers(oldAnswers => ({ ...oldAnswers, [questionToUse.name]: [...(oldAnswers[questionToUse.name] || []), target.value] }));
-    console.log(answers, 'end of handle checkboxes');
   };
 
   //for dropdown
