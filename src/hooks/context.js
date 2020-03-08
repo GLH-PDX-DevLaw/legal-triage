@@ -4,6 +4,7 @@ const lawAreaContext = createContext();
 
 export const LawAreaProvider = ({ children }) => {
   const [questionnaire, setQuestionnaire] = useState(null);
+  //TO DO: make a useState for tracking the array of answers for a question
 
   return (
     <lawAreaContext.Provider value={{ questionnaire, setQuestionnaire }} >

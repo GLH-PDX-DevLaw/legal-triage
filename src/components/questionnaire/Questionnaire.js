@@ -1,27 +1,20 @@
 import React from 'react';
 import Question from '../question/Question';
-import { useQuestionnaire } from '../../hooks/context';
+import useQuestions from '../../hooks/useQuestionnaire';
 
 export default function Questionnaire() {
-  const { questionnaire } = useQuestionnaire();
-console.log({ questionnaire });
+  const { questionnaire, currentQuestionIndex, handleNext, handlePrevious, questionToUse, hasAnswered, setHasAnswered } = useQuestions();
 
-  const handlePrevious = () => {
-    return;
-  };
-  const handleNext = () => {
-    return;
-  };
-  let questionToRender = <Question />;
   return (
     <>
       <h1>{`Legality surrounding ${questionnaire.label}`}</h1>
       <div>
-        {questionToRender}
+        <Question setHasAnswered={setHasAnswered} hasAnswered={hasAnswered} questionToUse={questionToUse} /> 
       </div>
 
-      <button onClick={handlePrevious} >Previous Question</button>
       <button onClick={handleNext} >Next Question</button>
+      <p>{currentQuestionIndex + 1}</p>
+      <button onClick={handlePrevious} >Previous Question</button>
     </>
   );
 }
