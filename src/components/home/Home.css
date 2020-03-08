@@ -1,0 +1,25 @@
+@import '../../index.css';
+.lawAreaButtonContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+   
+ 
+}
+.selectLaw{
+    color: $main;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem auto 3rem auto;
+    
+}
+.lawAreaButton > p{
+    display: grid;
+    margin-bottom: 3rem;
+    &:p {
+        margin-bottom: 2rem;
+    }
+}
+
+

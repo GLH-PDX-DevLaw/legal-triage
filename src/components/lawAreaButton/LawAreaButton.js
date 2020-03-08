@@ -1,5 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import styles from './LawAreaButton.css';
+import useLawArea from '../../hooks/useLawArea';
+
+
 import { useHistory } from 'react-router-dom';
 import { useSetQuestionnaire } from '../../hooks/context';
 
@@ -9,13 +14,20 @@ const LawAreaButton = ({ area }) => {
   const { setQuestionnaire } = useSetQuestionnaire()
   return (
     <>
-      <button onClick={() => {
+
+      <div className={styles.lawButtonContainer}>
+        <button
+          className={styles.mainLawButton}
+          onClick={() => {
         setQuestionnaire(area.label)
         history.push(`/questionnaire/${area.areaParam}`);
-      }}>
-        <img src={area.icon} /> 
-        <p>{area.label}</p>
-      </button>
+      }}
+        >
+          <img src={area.icon} className={styles.lawImage} />
+          <p className={styles.lawArea}>{area.label}</p>
+        </button>
+      </div>
+
     </>
   );
 };
