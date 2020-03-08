@@ -7,13 +7,13 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const { answers } = useAnswers();
   console.log(answers, 'right after destructuring');
 
-  const questionName = questionToUse.name; 
 
-  // const handleChange = ({ target }) => {
-  //   setHasAnswered(true);
-  //   updateAnswers({ target.value });
-  // };
+  const handleOptionOrRadioSelection = ({ target }) => {
+    setHasAnswered(true);
+    updateAnswers({ ...answers, [questionToUse.name]: target.value });
+  };
 
+  //for dropdown
   const optionsElements = questionToUse.answers.map((answer, i) => {
     return (
       <option key={answer + i} value={answer}>
@@ -25,7 +25,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const radioElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
+        <input type='radio' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} onChange={handleOptionOrRadioSelection} />
         <label htmlFor={answer}>{answer}</label>
       </>
     );
@@ -34,7 +34,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
   const checkboxElements = questionToUse.answers.map((answer, i) => {
     return (
       <>
-        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} />
+        <input type='checkbox' id={answer} name='letMakeSureThisActuallyWorksTomorrow' key={answer + i} value={answer} onChange={handleOptionOrRadioSelection} />
         <label htmlFor={answer}>{answer}</label>
       </>
     );
@@ -44,11 +44,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
 
   if(questionToUse.answerDisplay === 'select') {
     makeElement = (
-      <select onChange={({ target }) => {
-        setHasAnswered(true);
-        updateAnswers({ ...answers, [questionToUse.name]: target.value });
-        console.log({ answers });
-      }}>
+      <select onChange={handleOptionOrRadioSelection}>
         {optionsElements}
       </select>
     );
