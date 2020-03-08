@@ -1,14 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
 
-
 const lawAreaContext = createContext();
 
-export const LawAreaProvider = ({ children}) => {
-
-  const [questionnaire, setQuestionnaire] = useState('');
-
- 
-
+export const LawAreaProvider = ({ children }) => {
+  const [questionnaire, setQuestionnaire] = useState({});
 
   return (
     <lawAreaContext.Provider value={{ questionnaire, setQuestionnaire }} >
