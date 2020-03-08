@@ -29,4 +29,4 @@ Checkboxes.propTypes = {
   checked: PropTypes.bool.isRequired
 };
 
-export default RadioButtons;
+export default Checkboxes;
