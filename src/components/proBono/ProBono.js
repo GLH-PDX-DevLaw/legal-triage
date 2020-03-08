@@ -10,7 +10,7 @@ export default function ProBono() {
       </h1>
 
       <br />
-      <p>Based on your current location, these lawyers have soonest availablity to work with you.
+      <p>Based on your current location, these lawyers have the soonest availablity to work with you.
       </p>
 
       <img className={styles.lawyerProfilePicture} src='src\assets\2019-olio-shiwanni johnsen-3449.jpg' />
