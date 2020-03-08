@@ -20,6 +20,7 @@
 
 
 const q1 = {
+  name: 'q1',
   hasFollowUp: false,
   question: 'What state do you live in?',
   answerDisplay: 'select',
@@ -28,6 +29,7 @@ const q1 = {
 };
 
 const q2 = {
+  name: 'q2',
   hasFollowUp: false,
   question: 'What is the level of danger you are in?',
   answerDisplay: 'radio',
@@ -64,6 +66,7 @@ const q2 = {
 };
 
 const q3 = {
+  name: 'q3',
   hasFollowUp: false,
   question: 'What is your relationship to the person involved?',
   answerDisplay: 'radio',
@@ -89,6 +92,7 @@ const q3 = {
 };
 
 const q4 = {
+  name: 'q4',
   hasFollowUp: true,
   question: 'Are there endagered children?',
   answerDisplay: 'radio',
@@ -97,6 +101,7 @@ const q4 = {
 };
 
 const q4F1 = {
+  name: 'q4F1',
   parentAnswer: 'q4A',
   hasFollowUp: false,
   question: 'What are your concerns for the children involved?',
@@ -112,6 +117,7 @@ const q4F1 = {
 };
 
 const q4F2 = {
+  name: 'q4F2',
   parentAnswer: 'q4A',
   hasFollowUp: false,
   question: 'What is the age range for the children involved?',
@@ -127,6 +133,7 @@ const q4F2 = {
 };
 
 const q5 = {
+  name: 'q5',
   hasFollowUp: true,
   question: 'What is happening?',
   answerDisplay: 'radio',
@@ -159,6 +166,7 @@ const q5 = {
 
 //context for answer 1, 2, and 4 should be the same
 const q5F1 = {
+  name: 'q5F1',
   parentAnswer: 'q5A',
   hasFollowUp: false,
   question: 'What type of abuse is occuring?',
@@ -225,6 +233,7 @@ const q5F1 = {
 };
 
 const q5F2 = {
+  name: 'q5F2',
   parentAnswer: 'q5A',
   hasFollowUp: false,
   question: 'If this was a previous experience, when was the last occurence?',
@@ -254,6 +263,7 @@ const q5F2 = {
 };
 
 const q5F3 = {
+  name: 'q5F3',
   parentAnswer: 'q5B',
   hasFollowUp: false,
   question: 'What do you fear will happen?',
@@ -320,6 +330,7 @@ const q5F3 = {
 };
 
 const q6 = {
+  name: 'q6',
   hasFollowUp: false,
   question: 'What are some of your other concerns?',
   answerDisplay: 'checkbox',
