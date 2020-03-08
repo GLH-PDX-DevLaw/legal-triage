@@ -5,7 +5,7 @@ import sweep from '../../assets/sweep.png';
 import mask from '../../assets/mask.png';
 import useQuestions from '../../hooks/useQuestions';
 import ChangeQuestion from '../changeQuestion/ChangeQuestion';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import useModal from '../../hooks/useModal';
 import styles2 from '../home/Home.css';
@@ -43,12 +43,12 @@ export default function Questionnaire() {
       >
         {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
         <section className={styles2.sectionBtn}>
-          <button onClick={closeModal} className={styles2.modalBtnExit}>
+          <Link to={'/'}><button className={styles2.modalBtnExit}>
             Exit
-          </button>
+          </button></Link>
 
-          <button className={styles2.modalBtn}>Continue</button>
-          <button className={styles2.modalBtn}>Resource</button>
+          <button onClick={closeModal} className={styles2.modalBtn}>Continue</button>
+          <Link to={'/results'}><button className={styles2.modalBtn}>Resource</button></Link>
         </section>
         <div className={styles2.modalContainer}>
           <h2>Please Read</h2>
