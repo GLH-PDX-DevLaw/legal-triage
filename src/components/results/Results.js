@@ -91,6 +91,12 @@ export default function Results() {
   const score = calculateScore(answers);
   const toDisplay = [];
 
+  toDisplay.push(
+    <p key='likelihood'>
+      It is {getLikelihood(score)} that you have a claim.
+    </p>
+  );
+
   if(answers.q2.includes('emergency')) {
     toDisplay.push(
       <p key='emergency'>
@@ -102,12 +108,6 @@ export default function Results() {
   toDisplay.push(
     <p key='score'>
       Your score is {score}
-    </p>
-  );
-
-  toDisplay.push(
-    <p key='likelihood'>
-      Your likelihood is: {getLikelihood(score)}
     </p>
   );
 
