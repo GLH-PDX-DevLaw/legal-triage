@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useUpdateAnswers } from '../../hooks/context';
 
 export default function Question({ questionToUse, setHasAnswered }) {
+  const { updateAnswers, answers } = useUpdateAnswers();
 
-  const handleChange = ({ target }) => {
-    setHasAnswered(true);
-  };
+  const questionName = questionToUse.name; 
+
+  // const handleChange = ({ target }) => {
+  //   setHasAnswered(true);
+  //   updateAnswers({ target.value });
+  // };
 
   const optionsElements = questionToUse.answers.map((answer, i) => {
     return (
@@ -37,7 +42,11 @@ export default function Question({ questionToUse, setHasAnswered }) {
 
   if(questionToUse.answerDisplay === 'select') {
     makeElement = (
-      <select onChange={handleChange}>
+      <select onChange={({ target }) => {
+        setHasAnswered(true);
+        updateAnswers({ [questionName]: target.value });
+        console.log({ answers });
+      }}>
         {optionsElements}
       </select>
     );

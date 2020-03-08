@@ -7,8 +7,11 @@ export const LawAreaProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
 
   //run every single time that a user selects an answer
-  const updateAnswers = (newAnswer, answersState) => {
-    setAnswers({ ...answersState, newAnswer });
+  const updateAnswers = newAnswer => {
+    setAnswers({ 
+      ...answers, 
+      newAnswer
+    });
   };
 
   return (
