@@ -4,6 +4,7 @@ import { useQuestionnaire } from '../../hooks/context';
 
 export default function Questionnaire() {
   const { questionnaire } = useQuestionnaire()
+  console.log(questionnaire.areaParam)
 
   const handlePrevious = () => {
     return;
@@ -14,7 +15,7 @@ export default function Questionnaire() {
   let questionToRender = <Question />;
   return (
     <>
-      <h1>{`This is the ${questionnaire} page`}</h1>
+      <h1>{`This is the ${questionnaire.label} page`}</h1>
       <div>
         <h2>This is where the questions will be rendered</h2>
         {questionToRender}
