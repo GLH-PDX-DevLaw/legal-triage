@@ -17,7 +17,7 @@ const useQuestions = () => {
       //TO DO: logic for redirecting to follow ups 
       setCurrentQuestionIndex(currentIndex + 1);
     }
-    if(value === 'previous' && currentIndex !== 1) {
+    if(value === 'previous' && currentIndex !== 0) {
       setCurrentQuestionIndex(currentIndex - 1);
     }
   };
@@ -26,7 +26,7 @@ const useQuestions = () => {
     setQuestionToUse(questionsArray[currentQuestionIndex]);
   }, [currentQuestionIndex]);
 
-  return { currentQuestionIndex, questionnaire, questionToUse, setHasAnswered, hasAnswered, handleChangeQuestion };
+  return { currentQuestionIndex, questionToUse, setHasAnswered, hasAnswered, handleChangeQuestion };
 };
 
 export default useQuestions;

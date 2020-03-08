@@ -6,7 +6,7 @@ import styles from './Question.css';
 export default function Question({ questionToUse, setHasAnswered }) {
   const { updateAnswers } = useUpdateAnswers();
   const { answers } = useAnswers();
-  // console.log(answers, 'right after destructuring');
+  console.log(answers, 'right after destructuring');
 
 
   const handleOptionOrRadioSelection = ({ target }) => {
@@ -40,9 +40,7 @@ export default function Question({ questionToUse, setHasAnswered }) {
           value={answer}
           onChange={handleOptionOrRadioSelection}
         />
-        <label className={styles.label} htmlFor={answer}>
-          {answer}
-        </label>
+        <label className={styles.label} htmlFor={answer}>{answer}</label>
       </div>
     );
   });

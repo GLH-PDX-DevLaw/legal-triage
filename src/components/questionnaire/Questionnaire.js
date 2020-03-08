@@ -7,8 +7,7 @@ import useQuestions from '../../hooks/useQuestions';
 import ChangeQuestion from '../changeQuestion/ChangeQuestion';
 
 export default function Questionnaire() {
-
-  const { questionnaire, currentQuestionIndex, questionToUse, hasAnswered, setHasAnswered, handleChangeQuestion } = useQuestions();
+  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion } = useQuestions();
 
   return (
     <>
@@ -37,3 +36,4 @@ export default function Questionnaire() {
     </>
   );
 }
+
