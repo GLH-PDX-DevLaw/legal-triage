@@ -32,12 +32,11 @@ export default function Question({ questionToUse, setHasAnswered }) {
 
   const radioElements = questionToUse.answers.map((answer, i) => {
     return (
-      <div className={styles.radioDiv}>
+      <div key={answer + i} className={styles.radioDiv}>
         <input
           type='radio'
           id={answer}
           name='letMakeSureThisActuallyWorksTomorrow'
-          key={answer + i}
           value={answer}
           onChange={handleOptionOrRadioSelection}
         />
@@ -68,17 +67,17 @@ export default function Question({ questionToUse, setHasAnswered }) {
 
   let makeElement = null;
 
-  if (questionToUse.answerDisplay === 'select') {
+  if(questionToUse.answerDisplay === 'select') {
     makeElement = (
       <div className={styles.selectDiv}>
-        <select onChange={handleChange} className={styles.select} onChange={handleOptionOrRadioSelection} >
+        <select className={styles.select} onChange={handleOptionOrRadioSelection} >
           {optionsElements}
         </select>
       </div>
     );
-  } else if (questionToUse.answerDisplay === 'radio') {
+  } else if(questionToUse.answerDisplay === 'radio') {
     makeElement = <>{radioElements}</>;
-  } else if (questionToUse.answerDisplay === 'checkbox') {
+  } else if(questionToUse.answerDisplay === 'checkbox') {
     makeElement = <>{checkboxElements}</>;
   }
 
