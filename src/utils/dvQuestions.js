@@ -45,16 +45,16 @@ const q2 = {
         type: 'p',
         text: 'Here is a list of other resources: '
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Oregon Domestic Violence Victim Services - https://www.oregon.gov/dhs/abuse/domestic/pages/index.aspx'
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Oregon Coalition Against Domestic Violence - https://www.ocadsv.org/find-help' 
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Call to Safety - https://calltosafety.org/'
       }, {
-        type: 'li',
+        type: 'p',
         text: 'Battered Persons Advocacy - https://peaceathome.com/'
       }
     ],
@@ -353,6 +353,8 @@ const q7 = {
   context: [null]
 };
 
-export const questionList = [q1, q2, q3, q4, q5, q6, q7];
-export const question4FollowUps = [q4F1, q4F2, q4F3];
-export const question5FollowUps = [q5F1, q5F2, q5F3];
+export const dvQuestions = {
+  questionList: [q1, q2, q3, q4, q5, q6, q7],
+  question4FollowUps: [q4F1, q4F2, q4F3],
+  question5FollowUps: [q5F1, q5F2, q5F3]
+};

@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +11,6 @@ import Home from './home/Home.js';
 import Questionnaire from './questionnaire/Questionnaire.js';
 import Results from './results/Results.js';
 import { LawAreaProvider } from '../hooks/context';
-
 
 export default function App() {
 
