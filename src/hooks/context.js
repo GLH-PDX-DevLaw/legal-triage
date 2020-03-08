@@ -3,14 +3,14 @@ import React, { createContext, useContext, useState } from 'react';
 const lawAreaContext = createContext();
 
 export const LawAreaProvider = ({ children }) => {
-  const [questionnaire, setQuestionnaire] = useState({});
+  const [questionnaire, setQuestionnaire] = useState(null);
 
   return (
     <lawAreaContext.Provider value={{ questionnaire, setQuestionnaire }} >
       {children}
     </lawAreaContext.Provider>
-  )
-}
+  );
+};
 
 export const useQuestionnaire = () => {
   const { questionnaire } = useContext(lawAreaContext);
