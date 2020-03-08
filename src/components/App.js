@@ -11,6 +11,7 @@ import Home from './home/Home.js';
 import Questionnaire from './questionnaire/Questionnaire.js';
 import Results from './results/Results.js';
 import { LawAreaProvider } from '../hooks/context';
+import ProBono from './proBono/ProBono';
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
             <Route exact path='/' component={Home} />
             <Route path='/questionnaire/:area' component={Questionnaire} />
             <Route path='/results' component={Results} />
+            <Route path='/probono' component={ProBono} />
           </Switch>
         </LawAreaProvider>
       </Router>
