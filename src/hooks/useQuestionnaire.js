@@ -5,11 +5,11 @@ import { useQuestionnaire } from './context';
 const useQuestions = () => {
   const { questionnaire } = useQuestionnaire();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [questionToUse, setQuestionToUse] = useState(questionsArray[currentQuestionIndex]);
   const [hasAnswered, setHasAnswered] = useState(false);
   console.log({ questionnaire });
-
+  
   const questionsArray = getQuestionsArray(questionnaire);
+  const [questionToUse, setQuestionToUse] = useState(questionsArray[currentQuestionIndex]);
   
 
   const handleNext = currentIndex => {

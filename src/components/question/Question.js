@@ -25,7 +25,6 @@ export default function Question({ questionToUse, hasAnswered, setHasAnswered })
     }
   };
 
-
   return (
     <>
       <p>{questionToUse.question}</p>
