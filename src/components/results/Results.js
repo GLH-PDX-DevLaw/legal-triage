@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Results.css';
 import { Link } from 'react-router-dom';
+import Resources from '../resources/Resources';
 
 const dummyAnswers = {
   q1: 'OR',
@@ -15,6 +16,7 @@ const dummyAnswers = {
   q5F3: null,
   q6: 'Restraining order'
 };
+
 
 const otherResources = (
   <section key='resources'>
@@ -73,6 +75,7 @@ const otherResources = (
     </ul>
   </section>
 );
+
 
 const selfRepresentation = (
   <section>
@@ -198,7 +201,13 @@ const nextSteps = (
 
 export default function Results() {
   //replace dummyAnswers with hook or props
-  const answers = dummyAnswers;
+  const answers = ''; //dummyAnswers;
+  
+  if(!answers) {
+    return (
+      <Resources />
+    );
+  }
 
   const score = calculateScore(answers);
   const toDisplay = [];
@@ -235,6 +244,7 @@ export default function Results() {
             <button className={styles.btn}>Return Home</button>
           </Link>
         </div>
+
       </div>
     </>
   );
