@@ -7,7 +7,7 @@ import useQuestions from '../../hooks/useQuestions';
 import ChangeQuestion from '../changeQuestion/ChangeQuestion';
 
 export default function Questionnaire() {
-  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion } = useQuestions();
+  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion, questionsArray } = useQuestions();
 
   return (
     <>
@@ -30,6 +30,7 @@ export default function Questionnaire() {
           <ChangeQuestion
             index={currentQuestionIndex}
             handleChangeQuestion={handleChangeQuestion}
+            questionsArray={questionsArray}
           />
         </div>
       </section>

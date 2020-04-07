@@ -217,16 +217,17 @@ export default function Results() {
       <div className={styles.div}>
         <h2>Summary</h2>
         <div>{toDisplay}</div>
-        {/* <div>
+        <br />
+        <div>
           <p key='likelihood'>
-            It is <em> &nbsp;{getLikelihood(score)} &nbsp; </em> that you have a
+            It is <b> &nbsp;{getLikelihood(score).toUpperCase()} &nbsp; </b> that you have a
             claim.
           </p>
         </div>
         <br />
-        <div>{nextSteps}</div> */}
+        {/* <div>{nextSteps}</div> */}
         <div>{otherResources}</div>
-        <div>{selfRepresentation}</div>
+        {/* <div>{selfRepresentation}</div> */}
         <Link to={'/probono'} className={styles.bono}>Find a Pro Bono lawyer</Link>
 
         <div className={styles.btnContainer}>

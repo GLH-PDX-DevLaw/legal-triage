@@ -44,16 +44,7 @@ const Home = () => {
           <h2>Please Read</h2>
           <form className={styles.form}>
             <article className={styles.modalInfo}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
-              suscipit? Esse libero a similique veniam dolores velit, sunt
-              expedita, nobis facere dolor reiciendis dolore pariatur voluptates
-              nulla odit rerum consectetur id iusto ipsam tempore exercitationem
-              corporis minima voluptatum! Culpa, architecto. Lorem ipsum dolor
-              sit, amet consectetur adipisicing elit. Ducimus, suscipit? Esse
-              libero a similique veniam dolores velit, sunt expedita, nobis
-              facere dolor reiciendis dolore pariatur voluptates nulla odit
-              rerum consectetur id iusto ipsam tempore exercitationem corporis
-              minima voluptatum! Culpa, architecto.
+             Safety Alert: Computer use can be monitored and is impossible to completely clear. If you are afraid your internet usage might be monitored, call the National Domestic Violence Hotline at 1−800−799−7233 or TTY 1−800−787−3224.
             </article>
           </form>
         </div>
