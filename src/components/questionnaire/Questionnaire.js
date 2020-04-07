@@ -12,18 +12,14 @@ import styles2 from '../home/Home.css';
 
 export default function Questionnaire() {
   const params = useParams();
-  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion } = useQuestions();
-
+  const { currentQuestionIndex, questionToUse, setHasAnswered, handleChangeQuestion } = useQuestions()
   const { isOpen, setIsOpen } = useModal();
 
   Modal.setAppElement('#root');
-  // const openModal = () => {
-  //   setIsOpen(true);
-  // };
+  
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
+    
   }
 
   const closeModal = () => {
@@ -40,7 +36,6 @@ export default function Questionnaire() {
         // style={customStyles}
         contentLabel='Example Modal'
       >
-        {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
         <section className={styles2.sectionBtn}>
           <Link to={'/'}><button className={styles2.modalBtnExit}>
             Exit
@@ -83,6 +78,7 @@ export default function Questionnaire() {
           <ChangeQuestion
             index={currentQuestionIndex}
             handleChangeQuestion={handleChangeQuestion}
+            questionsArray={questionsArray}
           />
         </div>
       </section>

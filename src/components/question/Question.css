@@ -47,19 +47,19 @@
 }
 select {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: sans-serif;
     font-weight: 400;
     color: $gray;
     border: 2px solid $main;
     border-bottom: 3px solid transparent;
     line-height: 1.3;
-    padding: 1rem 1.5rem;
+    padding: .2rem;
     width: 33%;
     height: 2.5rem;
     max-width: 100%;
     border: 2px, 2px, 0, 2px $main;
-    margin-bottom: 2.5rem;
+    margin: 1rem;
     border: 0.3 solid black;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     border-radius: 0.2em;

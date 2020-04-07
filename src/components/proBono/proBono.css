@@ -1,4 +1,30 @@
+@import '../App.css';
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+p{
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.picsDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .lawyerProfilePicture {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px 1px $shadow;
+
 }
